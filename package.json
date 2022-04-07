@@ -1,0 +1,37 @@
+{
+    "name": "FWD_Storefront-",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "tsc && jasmine",
+        "start": "nodemon --exec npx ts-node src/index.ts",
+        "build": "tsc",
+        "lintingAndFormating": "eslint src/**/*.ts --ext .ts",
+        "lintingAndFormating:f": "eslint src/**/*.ts --ext .ts --fix",
+        "Formating": "prettier src/**/*.ts --config .prettierrc --write "
+    },
+    "author": "Mostafa Safwat Hussain",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.3",
+        "sharp": "^0.30.3"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "@types/jasmine": "^4.0.0",
+        "@types/sharp": "^0.30.0",
+        "@types/supertest": "^2.0.12",
+        "@typescript-eslint/eslint-plugin": "^5.16.0",
+        "@typescript-eslint/parser": "^5.16.0",
+        "eslint": "^8.11.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "jasmine": "^4.0.2",
+        "jasmine-spec-reporter": "^7.0.0",
+        "prettier": "^2.6.0",
+        "supertest": "^6.2.2",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.6.2"
+    }
+}
