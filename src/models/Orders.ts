@@ -1,7 +1,3 @@
-/*
-Current Order by user (args: user id)[token required]
-[OPTIONAL] Completed Orders by user (args: user id)[token required]
-*/
 import pool from "../helpers/database"
 import {order} from "../types"
 const currentOrder = async (userId:number):Promise<order[]>=>{//don't forget put this fun between try and catch
