@@ -1,5 +1,5 @@
 import {product} from "../types";
-import pool from "../helper/database"
+import pool from "../helpers/database"
 
 const index = async ():Promise<product[]>=>{//don't forget put this fun between try and catch
     const conn=await pool.connect();
