@@ -29,7 +29,7 @@ const topFive = async ():Promise<product[]>=>{//don't forget put this fun betwee
             WHERE id in (
                 SELECT poductId FROM OrdersProduct 
                 GROUP BY poductId 
-                ORDER BY count(*) 
+                ORDER BY SUM(quantity) 
                 LIMIT  5 );`
         );
     conn.release();
