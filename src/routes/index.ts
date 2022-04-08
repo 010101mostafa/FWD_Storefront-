@@ -1,12 +1,11 @@
-import express from "express";
+import express, { Request ,Response }from "express";
 
-import images from "./ImagesRouter";
+
 const MainRouter = express.Router();
 
-MainRouter.use("/images", images);
+MainRouter.get('/', function (req: Request, res: Response) {
+    res.send('Hello World!')
+})
 
-MainRouter.get("/", (req: express.Request, res: express.Response): void => {
-  res.send("hello to the image processing app");
-});
 
 export default MainRouter;
