@@ -16,6 +16,7 @@
     "license": "ISC",
     "dependencies": {
         "bcrypt": "^5.0.1",
+        "body-parser": "^1.20.0",
         "dotenv": "^16.0.0",
         "express": "^4.17.3",
         "jsonwebtoken": "^8.5.1",
@@ -23,8 +24,11 @@
     },
     "devDependencies": {
         "@types/bcrypt": "^5.0.0",
+        "@types/body-parser": "^1.19.2",
         "@types/express": "^4.17.13",
+        "@types/express-serve-static-core": "4.16.8",
         "@types/jasmine": "^4.0.0",
+        "@types/jsonwebtoken": "^8.5.8",
         "@types/pg": "^8.6.5",
         "@types/supertest": "^2.0.12",
         "@typescript-eslint/eslint-plugin": "^5.16.0",
@@ -40,5 +44,29 @@
         "supertest": "^6.2.2",
         "ts-node": "^10.7.0",
         "typescript": "^4.6.2"
+    },
+    "resolutions": {
+        "body-parser": "1.19.2",
+        "dotenv": "16.0.0",
+        "@types/express-serve-static-core": "4.16.8",
+        "semver": "7.3.5",
+        "debug": "4.3.4",
+        "ms": "2.1.2",
+        "mkdirp": "1.0.4",
+        "depd": "2.0.0",
+        "destroy": "1.2.0",
+        "http-errors": "2.0.0",
+        "on-finished": "2.4.1",
+        "qs": "6.10.3",
+        "raw-body": "2.5.1",
+        "statuses": "2.0.1",
+        "mime": "1.6.0",
+        "eslint-visitor-keys": "3.3.0",
+        "eslint-scope": "5.1.1",
+        "glob-parent": "5.1.2",
+        "estraverse": "4.3.0",
+        "async": "0.9.2",
+        "colors": "1.0.3",
+        "strip-json-comments": "2.0.1"
     }
 }
