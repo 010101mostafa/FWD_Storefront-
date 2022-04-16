@@ -8,9 +8,11 @@ CREATE DATABASE shopping;
 \c shopping
 GRANT ALL PRIVILEGES ON DATABASE shopping TO shopping_user;
 ``` 
-___### - the environment variables example (.env file)
+___
+### - the environment variables <b> example </b> (.env file)
 
 ```json
+NODE_ENV=dev
 DB_NAME=shopping
 DB_HOST=127.0.0.1
 DB_USER=shopping_user 
@@ -18,6 +20,7 @@ DB_PASSWORD=123
 HASH_SALT=5
 HASH_KEY=mostafaKEY
 TOKEN_SECRET=mostafaTOKEN_SECRET
+TEST_DB_NAME=shopping
 ``` 
 
 #### database port is defoult: 5432
