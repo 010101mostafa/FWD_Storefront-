@@ -41,3 +41,24 @@ These are the notes from a meeting with the frontend developer that describe wha
 - user_id
 - status of order (active or complete)
 
+## the endpoints
+
+| endpoint                                  | what's it doing ? |body json shape    |
+| :----------------- | :-------------------- |:-----|
+| [get]/                                         | show hello massage   |   |
+| [get]/user/                         | get all users [token required]     ||
+| [post]/user/                         | create a new user    | {firstname: "mostafa",lastname: "safwat",password: "123"} |
+| [get]/user/i            | get the user that have id=(i) [token required]  ||
+| [post]/user/login                         | login user py id and password   |{ userId: "1",   password: "password"}|
+| [get]/product/                         | get all products      ||
+| [post]/product/     | create a new product [token required]     |{ name: "pc", price: 20, category: "hw" }|
+| [get]/product/topfive    | get the top five most popular products    ||
+| [get]/Product/category/:categotyName|  get all Products in the category  ||
+| [get]/Product/i            | get the Product that have id=(i)   ||
+| [get]/orders/ | get all order data of the signed users [token required]   ||
+| [get]/orders/Completed | get all order data of the signed users which is Completed [token required]     ||
+| any other paths                           | response html page with 404 not found            ||
+
+
+
+

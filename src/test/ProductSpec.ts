@@ -53,7 +53,10 @@ describe("test product", () => {
           price: 20,
           category: "hw",
         } as product)
-      );
+      ).toBeTruthy();
+    });
+    it("topfive model", async () => {
+      expect(await productModel.topFive()).toBeTruthy();
     });
   });
 });
