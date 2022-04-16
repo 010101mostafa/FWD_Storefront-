@@ -11,7 +11,7 @@
         "lintingAndFormating": "eslint src/**/*.ts --ext .ts",
         "lintingAndFormating:f": "eslint src/**/*.ts --ext .ts --fix",
         "Formating": "prettier src/**/*.ts --config .prettierrc --write ",
-        "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess 'node ./dist/server.js'"
+        "watch": "tsc-watch --esModuleInterop ./src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\""
     },
     "author": "Mostafa Safwat Hussain",
     "license": "ISC",
@@ -42,6 +42,7 @@
         "prettier": "^2.6.0",
         "supertest": "^6.2.2",
         "ts-node": "^10.7.0",
+        "tsc-watch": "^5.0.3",
         "typescript": "^4.6.2"
     },
     "resolutions": {

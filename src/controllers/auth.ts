@@ -1,10 +1,10 @@
-import { Request, Response } from "express";
+import { Request, Response,NextFunction } from "express";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 
 dotenv.config();
 
-const auth = async (req: Request, res: Response): Promise<void> => {
+const auth = async (req: Request, res: Response,next:NextFunction): Promise<void> => {
   let Jwt: jwt.JwtPayload;
   try {
     const token = req.headers?.authorization?.split(" ")[1];
