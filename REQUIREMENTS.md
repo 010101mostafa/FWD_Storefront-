@@ -98,5 +98,5 @@ ordersid integer
 productid integer
 quantity numeric DEFAULT 1.0
 ```
-### date types
+### schema
 > see migrations files
