@@ -81,11 +81,12 @@ describe("User", () => {
         ).token
       ).toBeInstanceOf(String);
     });
+
     it("test index", async () => {
-     expect(await userModel.index())
+      expect(await userModel.index()).toBeTruthy();
     });
     it("test show", async () => {
-      expect(await userModel.show(1))
-    });/**/
+      expect(await userModel.show(1)).toBeTruthy();
+    }); /**/
   });
 });

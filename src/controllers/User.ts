@@ -13,8 +13,7 @@ const show = async (req: Request, res: Response): Promise<void> => {
   try {
     if (req.body.userId != req.params.id)
       res.status(401).json("not authotized");
-    else
-      res.json(await _user.show(req.body.userId));
+    else res.json(await _user.show(req.body.userId));
   } catch (err) {
     res.status(400).json(err);
   }
