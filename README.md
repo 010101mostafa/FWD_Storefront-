@@ -4,21 +4,29 @@
 
 | todo                       | run                           |
 | :------------------------- | :---------------------------- |
-| test                       | npm run test                  |
-| start                      | npm run start                 |
-| build                      | npm run build                 |
-| linting, Formating and fix | npm run lintingAndFormating:f |
+| test                       | yarn test                  |
+| start                      | yarn start                 |
+| build                      | yarn tsc                 |
+| linting, Formating and fix | yarn lintingAndFormating:f |
 
 ### the endpoints
 
 | endpoint                                  | what's it doing ?                                                        |
 | :---------------------------------------- | :----------------------------------------------------------------------- |
-| /                                         | show hello massage                                                       |
-| /images/imageName                         | get the full image from full folder                                      |
-| /images/imageName?w=num&h=num             | get the the resize image from thumbnail folder if don't exist create one |
+| [get]/                                         | show hello massage                                                       |
+| [get]/user/                         | get all users [token required]     |
+| [post]/user/                         | create a new user    |
+| [get]/user/i            | get the user that have id=(i) [token required]  |
+| [post]/user/login                         | login user py id and password   |
+| [get]/product/                         | get all products      |
+| [post]/product/     | create a new product [token required]     |
+| [get]/product/topfive    | get the top five most popular products    |
+| [get]/Product/category/:categotyName|  get all Products in the category  |
+| [get]/Product/i            | get the Product that have id=(i)   |
+| [get]/orders/ | get all order data of the signed users [token required]     |
+| [get]/orders/Completed | get all order data of the signed users which is Completed [token required]     |
 | any other paths                           | response html page with 404 not found                                    |
-| if any parameter is not a number (w or h) | response with bad request 400                                            |
+
 
 ### other functionality
-
-if you resize the image with send one parameter (w) without the other (h) you get the image with the full h rather than auto height
+.

@@ -6,7 +6,4 @@ describe("test FWD_Storefront app ", () => {
   it("app startup and 404 not found working", () => {
     request.get("/anyPosition").expect(404);
   });
-  describe("test product router ", () => {
-   
-  });
 });

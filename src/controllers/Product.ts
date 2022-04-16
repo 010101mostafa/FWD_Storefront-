@@ -1,63 +1,40 @@
-import { Request, Response, NextFunction } from "express";
-import dotenv from "dotenv"
-import jwt from "jsonwebtoken";
+import { Request, Response } from "express";
 
 import product from "./../models/Product";
 
-dotenv.config();
-const index = async (
-        req: Request,res: Response,next: NextFunction
-        ): Promise<void>=> 
-{
-    try{
-        res.json(await product.index());
-        res.status(200);
-    }catch(err){
-        res.json(err);
-        res.status(500);
-    }
+const index = async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.json(await product.index());
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
-const show = async (
-    req: Request,res: Response,next: NextFunction):Promise<void>=> 
-{
-try{
-    res.json(await product.show(req.params.id));
-    res.status(200);
-}catch(err){
-    res.json(err);
-    res.status(500);
-}
+const show = async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.json(await product.show(parseInt(req.params.id)));
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
-const topFive = async (
-    req: Request,res: Response,next: NextFunction):Promise<void>=> 
-{
-try{
+const topFive = async (req: Request, res: Response): Promise<void> => {
+  try {
     res.json(await product.topFive());
-    res.status(200);
-}catch(err){
-    res.json(err);
-    res.status(500);
-}
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
-const showCategory = async (
-    req: Request,res: Response,next: NextFunction):Promise<void>=> 
-{
-try{
+const showCategory = async (req: Request, res: Response): Promise<void> => {
+  try {
     res.json(await product.showCategory(req.params.category));
-    res.status(200);
-}catch(err){
-    res.json(err);
-    res.status(500);
-}
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
-const create =async ( req:Request,res:Response):Promise<void>=> 
-{
-    try{
-        res.json(await product.create(req.body.product));
-        res.status(200);
-    }catch(err){
-        res.json(err);
-        res.status(500);
-    }
+const create = async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.json(await product.create(req.body));
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
-export default {index,show,create,topFive,showCategory};
+export default { index, show, create, topFive, showCategory };

@@ -1,49 +1,37 @@
-import { Request, Response, NextFunction } from "express";
-import dotenv from "dotenv"
-import jwt from "jsonwebtoken";
+import { Request, Response } from "express";
 
 import _user from "./../models/User";
 
-dotenv.config();
-const index = async (
-        req: Request,res: Response):Promise<void>=> {
-    try{
-        res.json(await _user.index());
-        res.status(200);
-    }catch(err){
-        res.json(err);
-        res.status(500);
-    }
+const index = async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.json(await _user.index());
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
-const show = async (req: Request,res: Response):Promise<void>=> {
-    try{
-        res.json(await product.show(req.userId));
-        res.status(200);
-    }catch(err){
-        res.json(err);
-        res.status(500);
-    }
+const show = async (req: Request, res: Response): Promise<void> => {
+  try {
+    if (req.body.userId != req.params.id)
+      res.status(401).json("not authotized");
+    res.json(await _user.show(req.body.userId));
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
-const create =async (
-    req:Request,res:Response,next: NextFunction):Promise<void>=> 
-{
-    try{
-        res.json(await _user.create(req.body.User));
-        res.status(200);
-    }catch(err){
-        res.json(err);
-        res.status(500);
-    }
+const create = async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.json(await _user.create(req.body));
+  } catch (err) {
+    res.status(400);
+    res.json(err);
+  }
 };
-const login =async (
-    req:Request,res:Response,next: NextFunction):Promise<void>=> 
-{
-    try{
-        res.json(await _user.login(req.body.username,req.body.password));
-        res.status(200);
-    }catch(err){
-        res.json(err);
-        res.status(500);
-    }
+const login = async (req: Request, res: Response): Promise<void> => {
+  try {
+    res.json(await _user.login(req.body.userId, req.body.password));
+  } catch (err) {
+    res.status(400);
+    res.json(err);
+  }
 };
-export default {index,show,create,login};
+export default { index, show, create, login };
