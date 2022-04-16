@@ -23,7 +23,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## Data Shapes
 #### Product
--  id 
+-  id  
 - name
 - price
 - [OPTIONAL] category
@@ -61,4 +61,42 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 
 
+## Databse schema 
+###tebles
+- _User
+- Product
+- Orders
+- OrdersProduct
+### ERD 
+![Screenshot](ERD.png)
+### date types
+#### Product
+```sql
+id  integer
+name varchar(100)
+price numeric
+category varchar(100) 
+```
 
+#### _User
+```sql
+id  integer
+firstName varchar(100)
+lastName varchar(100)
+password text
+```
+
+#### Orders
+```sql
+id integer 
+status varchar(1) 
+userid integer
+```
+#### OrdersProduct
+```sql
+ordersid integer 
+productid integer
+quantity numeric DEFAULT 1.0
+```
+### date types
+> see migrations files

@@ -1,11 +1,44 @@
-# FWDMostafaImageProcessingAPI
+# FWD_Storefront-
+## setup the project
+### - setup the database 
+
+```sql
+CREATE USER shopping_user WITH PASSWORD '123';
+CREATE DATABASE shopping;
+\c shopping
+GRANT ALL PRIVILEGES ON DATABASE shopping TO shopping_user;
+``` 
+___### - the environment variables example (.env file)
+
+```json
+DB_NAME=shopping
+DB_HOST=127.0.0.1
+DB_USER=shopping_user 
+DB_PASSWORD=123
+HASH_SALT=5
+HASH_KEY=mostafaKEY
+TOKEN_SECRET=mostafaTOKEN_SECRET
+``` 
+
+#### database port is defoult: 5432
+___
+### - install Dependencies 
+
+```sh
+npm install yarn -g
+yarn install
+yarn db-migrate up
+
+``` 
+___
+### -  the environment variables example (.env file)
 
 ### The scripts needed to test/start/build my application
 
 | todo                       | run                           |
 | :------------------------- | :---------------------------- |
-| test                       | yarn test                  |
-| start                      | yarn start                 |
+| test                       | yarn test|         
+| start                      | yarn start <br> yarn watch     |
 | build                      | yarn tsc                 |
 | linting, Formating and fix | yarn lintingAndFormating:f |
 
