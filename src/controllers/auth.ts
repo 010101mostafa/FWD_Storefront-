@@ -16,7 +16,7 @@ const auth = async (
       token as string,
       process.env.TOKEN_SECRET as string
     ) as jwt.JwtPayload;
-    req.body.userId = Jwt.uid;
+    req.userId = Jwt.uid;
     next();
   } catch {
     res.status(401);
