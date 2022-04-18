@@ -1,5 +1,6 @@
 import app from "../server";
 import supertest from "supertest";
+import ordersModel from "../models/Orders";
 
 const request = supertest(app);
 let token = "";
@@ -28,6 +29,14 @@ describe("test orders", () => {
         .get("/orders/completed")
         .set({ Authorization: "token " + token })
         .expect(200);
+    });
+  });
+  describe("test  orders model", () => {
+    it("current orders ", async () => {
+      expect(await ordersModel.currentOrder(1)).toBeTruthy();
+    });
+    it("completed orders ", async () => {
+      expect(await ordersModel.completedOrders(1)).toBeTruthy();
     });
   });
 });

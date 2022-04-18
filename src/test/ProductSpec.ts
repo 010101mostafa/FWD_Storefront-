@@ -32,7 +32,7 @@ describe("test product", () => {
     it("test product index endpoint", async () => {
       await request.get("/product/").expect(200);
     });
-    it("show should send an integer parameter", async () => {
+    it("show should send the parameter", async () => {
       await request.get("/product/mostafa").expect(400);
     });
     it("show a product endpoint", async () => {
@@ -54,6 +54,15 @@ describe("test product", () => {
           category: "hw",
         } as product)
       ).toBeTruthy();
+    });
+    it("test product index model", async () => {
+      expect(await productModel.index()).toBeTruthy();
+    });
+    it("show a product model", async () => {
+      expect(await productModel.show(1)).toBeTruthy();
+    });
+    it("show the products py category model", async () => {
+      expect(await productModel.showCategory("hw")).toBeTruthy();
     });
     it("topfive model", async () => {
       expect(await productModel.topFive()).toBeTruthy();
