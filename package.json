@@ -4,7 +4,7 @@
     "description": "",
     "main": "server.ts",
     "scripts": {
-        "test": "tsc&&set NODE_ENV=test&& jasmine",
+        "test": "tsc&&set NODE_ENV=test&&db-migrate up &&jasmine",
         "jasmine": "jasmine",
         "start": "nodemon --exec npx ts-node src/server.ts",
         "tsc": "tsc",
